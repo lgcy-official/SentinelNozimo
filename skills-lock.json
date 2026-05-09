@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "skills": {
+    "setup-hyperspell": {
+      "source": "docs.hyperspell.com",
+      "sourceType": "well-known",
+      "computedHash": "75dd3078e511dfd9bed6d7fd7eeffef723603f397ccda0896b46127978730b6a"
+    }
+  }
+}

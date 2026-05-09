@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sentinel Company Brain</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Connected applications">
+        <div class="brand">
+          <div class="brand-mark">S</div>
+          <div>
+            <p class="eyebrow">Company Brain</p>
+            <h1 id="app-name">Sentinel</h1>
+          </div>
+        </div>
+
+        <button class="connect-button" id="connect-button" type="button">
+          <span>+</span>
+          Connect sources
+        </button>
+
+        <div class="sidebar-section">
+          <div class="section-heading">
+            <span>Applications</span>
+            <span id="source-count">0</span>
+          </div>
+          <div class="source-list" id="source-list"></div>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="section-heading">
+            <span>Recent docs</span>
+            <span id="memory-count">0</span>
+          </div>
+          <div class="memory-list" id="memory-list"></div>
+        </div>
+      </aside>
+
+      <main class="chat-panel">
+        <header class="chat-header">
+          <div>
+            <p class="eyebrow">Ask across integrated docs</p>
+            <h2>Your company's searchable memory</h2>
+          </div>
+          <div class="status-pill" id="connection-status">Checking sources</div>
+        </header>
+
+        <div class="source-filter" id="source-filter" aria-label="Source filters"></div>
+
+        <section class="messages" id="messages" aria-live="polite">
+          <article class="message assistant">
+            <div class="avatar">S</div>
+            <div class="bubble">
+              <p>
+                Ask me about company docs, project decisions, customers, meeting notes, Slack context,
+                or anything indexed through Hyperspell.
+              </p>
+              <div class="prompt-row">
+                <button type="button" data-prompt="What are the most important recent company updates?">Recent updates</button>
+                <button type="button" data-prompt="Summarize our current product priorities.">Product priorities</button>
+                <button type="button" data-prompt="What decisions have been made about customers or sales?">Customer decisions</button>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <form class="composer" id="chat-form">
+          <textarea
+            id="prompt"
+            name="prompt"
+            rows="1"
+            placeholder="Ask Sentinel about your company docs..."
+            autocomplete="off"
+          ></textarea>
+          <button type="submit" id="send-button" aria-label="Send question">
+            <span>&uarr;</span>
+          </button>
+        </form>
+      </main>
+
+      <aside class="inspector" aria-label="Answer context">
+        <div class="inspector-card">
+          <div class="section-heading">
+            <span>Retrieval</span>
+            <span id="result-count">0</span>
+          </div>
+          <div id="retrieval-state" class="empty-state">
+            Sources from each answer will appear here.
+          </div>
+          <div id="retrieval-list" class="retrieval-list"></div>
+        </div>
+
+        <div class="inspector-card">
+          <div class="section-heading">
+            <span>Scope</span>
+            <span id="scope-label">All</span>
+          </div>
+          <p class="muted">
+            Select apps on the left to narrow future questions. Leave everything off to search the full brain.
+          </p>
+        </div>
+      </aside>
+    </div>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
